@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+dist/main
+dist/renderer
+dist-ssr
+*.local
+renderer/node_modules
+.idea
+out

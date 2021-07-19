@@ -1,0 +1,52 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "vite electron forge react project scaffold",
+  "main": "./dist/main/index.js",
+  "author": "sushao",
+  "license": "MIT",
+  "workspaces": [
+    "renderer",
+    "main",
+    "dist"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "yarn dev:main & yarn dev:renderer",
+    "build": "yarn workspace renderer build && yarn workspace main build",
+    "dev:renderer": "yarn workspace main dev",
+    "dev:main": "yarn workspace renderer dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.3.2",
+    "electron": "^13.1.7"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "my_new_app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
