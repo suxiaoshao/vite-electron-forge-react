@@ -13,11 +13,8 @@ const createWindow = (): void => {
         height: 600,
         width: 800,
     });
-    const env=JSON.parse(JSON.stringify(process.env));
 
-    const isProduction = env.NODE_ENV !=='development';
-
-    if(isProduction){
+    if(app.isPackaged){
         const url=path.resolve(__dirname,'../renderer/index.html')
         mainWindow.loadFile(url);
     }else{

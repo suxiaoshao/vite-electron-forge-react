@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "yarn build:dev && yarn workspace dist dev",
-    "build:dev": "webpack",
-    "build": "webpack && yarn workspace dist make"
+    "build:dev": "webpack --config webpack.config.dev.ts",
+    "build": "webpack --config webpack.config.prop.ts && yarn workspace dist make"
   }
 }
