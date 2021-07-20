@@ -13,7 +13,7 @@
   "private": true,
   "scripts": {
     "dev": "yarn dev:main & yarn dev:renderer",
-    "build": "yarn workspace renderer build && yarn workspace main build",
+    "build": "yarn workspace renderer build && yarn workspace main build &&yarn workspace dist make",
     "dev:renderer": "yarn workspace main dev",
     "dev:main": "yarn workspace renderer dev"
   },

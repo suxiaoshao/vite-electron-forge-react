@@ -1,5 +1,6 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
+import HookShellPlugin from 'webpack-hook-plugin'
 
 const config: webpack.Configuration = {
     mode: 'development',
@@ -20,7 +21,13 @@ const config: webpack.Configuration = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
-    target:'electron-main',
+    plugins: [
+        new HookShellPlugin({
+            onBuildEnd: ['yarn workspace dist dev']
+        })
+    ],
+    target: 'electron-main',
+    watch: true
 };
 
 export default config;

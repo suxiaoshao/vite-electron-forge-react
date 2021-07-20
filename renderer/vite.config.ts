@@ -7,5 +7,8 @@ export default defineConfig({
   build:{
     outDir:"../dist/renderer"
   },
-  base:"./"
+  base:"./",
+  server:{
+    port:3030
+  }
 })

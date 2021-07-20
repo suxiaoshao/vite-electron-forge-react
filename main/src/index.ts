@@ -14,12 +14,13 @@ const createWindow = (): void => {
         width: 800,
     });
 
+
     if(app.isPackaged){
         const url=path.resolve(__dirname,'../renderer/index.html')
         mainWindow.loadFile(url);
     }else{
         // and load the index.html of the app.
-        mainWindow.loadURL("http://localhost:3000");
+        mainWindow.loadURL("http://localhost:3030");
     }
 
     // Open the DevTools.

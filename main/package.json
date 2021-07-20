@@ -10,14 +10,15 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.1.0",
     "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-hook-plugin": "^1.0.7"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
   },
   "scripts": {
-    "dev": "yarn build:dev && yarn workspace dist dev",
+    "dev": "yarn build:dev",
     "build:dev": "webpack --config webpack.config.dev.ts",
-    "build": "webpack --config webpack.config.prop.ts && yarn workspace dist make"
+    "build": "webpack --config webpack.config.prod.ts"
   }
 }
