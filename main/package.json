@@ -19,6 +19,7 @@
   "scripts": {
     "dev": "yarn build:dev",
     "build:dev": "webpack --config webpack.config.dev.ts",
-    "build": "webpack --config webpack.config.prod.ts"
+    "build": "webpack --config webpack.config.prod.ts",
+    "tslint": "tsc --build tsconfig.lint.json"
   }
 }
